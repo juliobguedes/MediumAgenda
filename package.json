@@ -1,0 +1,16 @@
+{
+  "name": "medium-agenda",
+  "version": "0.0.1-alpha",
+  "description": "Keeps a schedule agenda of medium stories",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "medium",
+    "reading",
+    "to-do"
+  ],
+  "author": "julio.costa@ccc.ufcg.edu.br",
+  "license": "MIT"
+}
