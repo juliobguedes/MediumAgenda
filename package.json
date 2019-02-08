@@ -12,5 +12,11 @@
     "to-do"
   ],
   "author": "julio.costa@ccc.ufcg.edu.br",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^5.13.0",
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.1.1"
+  }
 }
