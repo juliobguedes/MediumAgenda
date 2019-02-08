@@ -1,6 +1,6 @@
 module.exports = {
     "env": {
-        "browser": true,
+        "node": true,
         "es6": true
     },
     "extends": "eslint:recommended",
@@ -18,6 +18,7 @@ module.exports = {
             "unix"
         ],
         "no-console": "off",
+        "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
         "quotes": [
             "error",
             "single"
