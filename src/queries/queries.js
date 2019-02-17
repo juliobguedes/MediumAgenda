@@ -1,11 +1,15 @@
-const {
+import {
     GraphQLObjectType,
     GraphQLString,
     GraphQLInt,
     GraphQLList,
-} = require('graphql');
-const { movies, directors } = require('./data');
-const { movieType, directorType } = require('./types');
+} from 'graphql';
+import {
+    Movie,
+    Director,
+    movieType,
+    directorType
+} from '../models';
 
 const queryType = new GraphQLObjectType({
     name: 'Query',
@@ -17,21 +21,21 @@ const queryType = new GraphQLObjectType({
         movie: {
             type: new GraphQLList(movieType),
             args: { id: { type: GraphQLInt} },
-            resolve: (src, args) => {
-                const result = args.id ? 
-                    movies.filter(movie => movie.id === args.id) :
-                    movies;
-                return result;
+            resolve: async (src, args) => {
+                const movies = args.id ? 
+                    Movie.find({ id: args.id}) : Movie.find();
+                await movies;
+                return movies;
             }
         },
         director: {
             type: new GraphQLList(directorType),
             args: { id: { type: GraphQLInt }},
-            resolve: (src, args) => {
-                const result = args.id ?
-                    directors.filter(director => director.id == args.id) :
-                    directors;
-                return result;
+            resolve: async (src, args) => {
+                const directors = args.id ?
+                    Director.find({ id: args.id}) : Director.find();
+                await directors;
+                return directors;
             }
         }
     },
