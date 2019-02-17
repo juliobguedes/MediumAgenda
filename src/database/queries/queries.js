@@ -9,7 +9,7 @@ import {
     Director,
     movieType,
     directorType
-} from '../models';
+} from '../../models';
 
 const queryType = new GraphQLObjectType({
     name: 'Query',

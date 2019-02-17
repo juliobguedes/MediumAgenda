@@ -1,11 +1,11 @@
-const {
+import {
     GraphQLObjectType,
     GraphQLID,
     GraphQLInt,
     GraphQLString
-} = require('graphql');
-const { Schema } = require('mongoose');
-const db = require('../database/config');
+} from 'graphql';
+import { Schema } from 'mongoose';
+import db from '../database/config';
 
 const movieType = new GraphQLObjectType({
     name: 'Movie',
@@ -28,4 +28,5 @@ const Movie = db.model('movie', movieSchema);
 export {
     movieType as default,
     Movie,
+    movieSchema
 };
