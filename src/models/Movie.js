@@ -17,13 +17,13 @@ const movieType = new GraphQLObjectType({
     }
 });
 
-const movieSchema = new Schema({
+const movieSchema = {
     name: String,
     year: Number,
     directorId: Number,
-});
+};
 
-const MovieModel = db.model('movie', movieSchema);
+const MovieModel = db.model('movie', new Schema(movieSchema));
 
 export {
     movieType as default,
