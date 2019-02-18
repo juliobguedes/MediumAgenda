@@ -1,0 +1,30 @@
+import {
+    GraphQLList,
+    GraphQLInt,
+} from 'graphql';
+import {
+    reviewType,
+    ReviewModel,
+} from '../../models';
+
+const review = {
+    type: new GraphQLList(reviewType),
+    args: {
+        id: { type: GraphQLInt },
+        postId: { type: GraphQLInt },
+    },
+    resolve: async (src, args) => {
+        let qry = {};
+        if (args.id) {
+            qry.id = args.id;
+        }
+        if (args.postId) {
+            qry.postId = args.postId;
+        }
+        const reviews = ReviewModel.find(qry);
+        await reviews;
+        return reviews;
+    }
+};
+
+export default review;

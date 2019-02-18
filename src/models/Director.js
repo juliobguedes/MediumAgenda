@@ -7,7 +7,7 @@ import {
 } from 'graphql';
 import { Schema } from 'mongoose';
 import db from '../database/config';
-import movieType, { movieSchema, Movie } from './Movie';
+import movieType, { movieSchema, MovieModel } from './Movie';
 
 const directorType = new GraphQLObjectType({
     name: 'Director',
@@ -18,7 +18,7 @@ const directorType = new GraphQLObjectType({
         movies: {
             type: new GraphQLList(movieType),
             async resolve(src, _args) {
-                const dirMovies = Movie.find({ directorId: src.id });
+                const dirMovies = MovieModel.find({ directorId: src.id });
                 await dirMovies;
                 return dirMovies;
             }
@@ -26,13 +26,13 @@ const directorType = new GraphQLObjectType({
     }
 });
 
-const directorSchema = new Schema({
+const directorSchema = {
     name: String,
     age: Number,
     movies: [movieSchema],
-});
+};
 
-const DirectorModel = db.model('director', directorSchema);
+const DirectorModel = db.model('director', new Schema(directorSchema));
 
 export {
     directorType as default,
