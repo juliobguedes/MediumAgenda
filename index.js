@@ -1,7 +1,7 @@
-const express = require('express');
-const graphqlHttp = require('express-graphql');
-const { GraphQLSchema } = require('graphql');
-const { queryType } = require('./queries.js');
+import express from 'express';
+import graphqlHttp from 'express-graphql';
+import { GraphQLSchema } from 'graphql';
+import queryType from './src/database/queries/';
 
 const port = 9000;
 const app = express();

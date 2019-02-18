@@ -9,6 +9,10 @@ module.exports = {
         "sourceType": "module"
     },
     "rules": {
+        "eol-last": [
+            "error",
+            "always"
+        ],
         "indent": [
             "error",
             4
