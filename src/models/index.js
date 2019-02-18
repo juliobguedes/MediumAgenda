@@ -1,6 +1,6 @@
-import movieType, { Movie } from './Movie';
-import directorType, { Director } from './Director';
+import movieType, { MovieModel } from './Movie';
+import directorType, { DirectorModel } from './Director';
 
 export {
-    movieType, Movie, directorType, Director,
+    movieType, MovieModel, directorType, DirectorModel,
 };

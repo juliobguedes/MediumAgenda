@@ -32,9 +32,9 @@ const directorSchema = new Schema({
     movies: [movieSchema],
 });
 
-const Director = db.model('director', directorSchema);
+const DirectorModel = db.model('director', directorSchema);
 
 export {
     directorType as default,
-    Director,
+    DirectorModel,
 };
