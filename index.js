@@ -2,6 +2,7 @@ import express from 'express';
 import graphqlHttp from 'express-graphql';
 import { GraphQLSchema } from 'graphql';
 import queryType from './src/database/queries/';
+import axiosInstance from './src/webcrawler';
 
 const port = 9000;
 const app = express();
