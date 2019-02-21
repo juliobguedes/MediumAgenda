@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const dbUrl = 'mongodb://localhost/test_medium';
+import { MONGO_URL } from '../config';
 const ERR = 1;
 
-const db = mongoose.createConnection(dbUrl, { useNewUrlParser: true });
+const db = mongoose.createConnection(MONGO_URL, { useNewUrlParser: true });
 
 db.on('error', error => {
     console.error(error);

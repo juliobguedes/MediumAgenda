@@ -2,20 +2,26 @@ import {
     MediumClient,
     Scope,
 } from 'medium-sdk';
+import {
+    MEDIUM_CID,
+    MEDIUM_SKEY,
+    REDIRECT_URL,
+    JULIO_AUTH,
+} from './config';
 
 const medium = new MediumClient({
-    clientId: process.env.MEDIUM_CID,
-    clientSecret: process.env.MEDIUM_SKEY,
+    clientId: MEDIUM_CID,
+    clientSecret: MEDIUM_SKEY,
 });
 
-const redirectURL = 'https://juliobguedes.github.io/mediumagenda/callback/medium';
+const redirectURL = REDIRECT_URL;
 
 const url = medium.getAuthorizationUrl('secretState', redirectURL, [
     Scope.BASIC_PROFILE,
     Scope.PUBLISH_POST,
 ]);
 
-medium.exchangeAuthorizationCode('YOUR_AUTHORIZATION_CODE', redirectURL, (err, token) => {
+medium.exchangeAuthorizationCode(JULIO_AUTH, redirectURL, (err, token) => {
     medium.getUser((err, user) => {
         medium.createPost({
             userId: user.id,

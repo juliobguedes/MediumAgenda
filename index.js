@@ -2,8 +2,8 @@ import express from 'express';
 import graphqlHttp from 'express-graphql';
 import { GraphQLSchema } from 'graphql';
 import queryType from './src/database/queries/';
+import { PORT } from './src/config';
 
-const port = 9000;
 const app = express();
 
 app.get('/hello', (req, res) => {
@@ -17,5 +17,5 @@ app.use('/graphql', graphqlHttp({
     graphiql: true,
 }));
 
-app.listen(port);
-console.log(`GraphQL server running at localhost:${port}`);
+app.listen(PORT);
+console.log(`GraphQL server running at localhost:${PORT}`);

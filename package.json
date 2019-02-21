@@ -22,7 +22,8 @@
     "express-graphql": "^0.7.1",
     "graphql": "^14.1.1",
     "medium-sdk": "^0.0.4",
-    "mongoose": "^5.4.11"
+    "mongoose": "^5.4.11",
+    "secure-env": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
