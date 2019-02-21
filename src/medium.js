@@ -2,12 +2,11 @@ import {
     MediumClient,
     Scope,
 } from 'medium-sdk';
-import {
-    MEDIUM_CID,
-    MEDIUM_SKEY,
-    REDIRECT_URL,
-    JULIO_AUTH,
-} from './config';
+import keys from './config';
+
+const {
+    MEDIUM_CID, MEDIUM_SKEY, REDIRECT_URL, JULIO_AUTH,
+} = keys;
 
 const medium = new MediumClient({
     clientId: MEDIUM_CID,

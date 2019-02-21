@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-import { MONGO_URL } from '../config';
+import keys from '../config';
+const { MONGO_URL } = keys;
+
 const ERR = 1;
 
 const db = mongoose.createConnection(MONGO_URL, { useNewUrlParser: true });

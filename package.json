@@ -4,6 +4,7 @@
   "description": "Keeps a schedule agenda of medium stories",
   "main": "index.js",
   "scripts": {
+    "prestart": "secure-env .env -s damnDaniel",
     "start": "nodemon --exec babel-node index.js",
     "lint": "yarn eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -29,6 +30,7 @@
     "@babel/core": "^7.3.3",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
+    "babel-eslint": "^10.0.1",
     "nodemon": "^1.18.10"
   }
 }

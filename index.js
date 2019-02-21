@@ -1,8 +1,9 @@
 import express from 'express';
 import graphqlHttp from 'express-graphql';
 import { GraphQLSchema } from 'graphql';
+import keys from './src/config';
 import queryType from './src/database/queries/';
-import { PORT } from './src/config';
+const { PORT } = keys;
 
 const app = express();
 
