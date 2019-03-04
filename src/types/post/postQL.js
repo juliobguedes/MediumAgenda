@@ -23,9 +23,9 @@ const post = {
     }
 };
 
-const addPost = () => undefined;
+const addPost = { };
 
-const editPost = () => undefined;
+const editPost = { };
 
 export {
     post as default,

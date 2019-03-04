@@ -5,9 +5,9 @@ import {
     GraphQLString,
 } from 'graphql';
 import { Schema } from 'mongoose';
-import authorType, { authorSchema, AuthorModel } from '../types/author/Author';
-import blogType, { blogSchema, BlogModel } from '../types/blog/Blog';
-import db from '../lib/config';
+import { authorType, authorSchema, AuthorModel } from '../author/Author';
+import { blogType, blogSchema, BlogModel } from '../blog/Blog';
+import db from '../../lib/config';
 
 const postType = new GraphQLObjectType({
     name: 'Post',

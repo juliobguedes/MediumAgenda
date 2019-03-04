@@ -3,7 +3,7 @@ import {
 } from 'graphql';
 import author, { addAuthor, editAuthor } from './author/authorQL';
 import blog, { addBlog, editBlog } from './blog/blogQL';
-import director, { addDirector, editDirector } from './director/directorQL';
+import director, { addDirector, editDirector, deleteDirector } from './director/directorQL';
 import movie, { addMovie, editMovie } from './movie/movieQL';
 import post, { addPost, editPost } from './post/postQL';
 import review, { addReview, editReview } from './review/reviewQL';
@@ -23,23 +23,24 @@ const queries = new GraphQLObjectType({
 const mutations = new GraphQLObjectType({
     name: 'Mutation',
     fields: {
-        addAuthor,
-        editAuthor,
+        // addAuthor,
+        // editAuthor,
 
-        addBlog,
-        editBlog,
+        // addBlog,
+        // editBlog,
 
         addDirector,
         editDirector,
+        deleteDirector,
         
-        addMovie,
-        editMovie,
+        // addMovie,
+        // editMovie,
 
-        addPost,
-        editPost,
+        // addPost,
+        // editPost,
 
-        addReview,
-        editReview,
+        // addReview,
+        // editReview,
     },
 });
 

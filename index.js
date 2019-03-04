@@ -3,13 +3,12 @@ import graphqlHttp from 'express-graphql';
 import { GraphQLSchema } from 'graphql';
 import keys from './src/config';
 import {
-    queryType, mutationType,
+    queries, mutations,
 } from './src/types';
-import createAuthor from './src/database/mutations/prototype';
 const { PORT } = keys;
 
 const app = express();
-const schema = new GraphQLSchema({ query: queryType, mutation: mutationType });
+const schema = new GraphQLSchema({ query: queries, mutation: mutations });
 
 app.use(express.json());
 
@@ -25,11 +24,6 @@ app.use('/graphql', graphqlHttp({
 }));
 
 app.get('/hello', (req, res) => {
-    res.send('hello');
-});
-
-app.post('/director', (req, res) => {
-    createAuthor(req);
     res.send('hello');
 });
 

@@ -27,9 +27,9 @@ const review = {
     }
 };
 
-const addReview = () => undefined;
+const addReview = { };
 
-const editReview = () => undefined;
+const editReview = { };
 
 export {
     review as default,

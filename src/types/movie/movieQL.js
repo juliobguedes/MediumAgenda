@@ -1,4 +1,5 @@
 import {
+    GraphQLID,
     GraphQLInt,
     GraphQLList,
     GraphQLNonNull,
@@ -11,7 +12,7 @@ import {
 
 const movie = {
     type: new GraphQLList(movieType),
-    args: { id: { type: GraphQLInt} },
+    args: { id: { type: GraphQLID} },
     resolve: async (src, args) => {
         const movies = args.id ? 
             MovieModel.find({ id: args.id}) : MovieModel.find();
@@ -25,7 +26,7 @@ const addMovie = {
     args: {
         name: { type: GraphQLNonNull(GraphQLString) },
         age: { type: GraphQLNonNull(GraphQLInt) },
-        directorId: { type: GraphQLNonNull(GraphQLInt) },
+        directorId: { type: GraphQLNonNull(GraphQLID) },
     },
     async resolve(src, args) {
         MovieModel.create(args).then(res => res.data);

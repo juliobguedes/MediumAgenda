@@ -20,7 +20,7 @@ const movieType = new GraphQLObjectType({
 const movieSchema = {
     name: String,
     year: Number,
-    directorId: Number,
+    directorId: String,
 };
 
 const MovieModel = db.model('movie', new Schema(movieSchema));

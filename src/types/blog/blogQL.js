@@ -27,9 +27,9 @@ const blog = {
     },
 };
 
-const addBlog = () => undefined;
+const addBlog = { };
 
-const editBlog = () => undefined;
+const editBlog = { };
 
 export {
     blog as default,

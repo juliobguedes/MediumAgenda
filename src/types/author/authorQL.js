@@ -27,9 +27,9 @@ const author = {
     }
 };
 
-const addAuthor = () => undefined;
+const addAuthor = { };
 
-const editAuthor = () => undefined;
+const editAuthor = { };
 
 export {
     author as default,

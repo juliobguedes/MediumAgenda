@@ -7,7 +7,7 @@ import {
     GraphQLString,
 } from 'graphql';
 import { Schema } from 'mongoose';
-import postType, { PostModel, postSchema } from './Post';
+import { postType, PostModel, postSchema } from '../post/Post';
 import db from '../../lib/config';
 
 const reviewType = new GraphQLObjectType({
