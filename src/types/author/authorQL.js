@@ -1,12 +1,11 @@
 import {
-    GraphQLList,
     GraphQLInt,
+    GraphQLList,
     GraphQLString,
 } from 'graphql';
 import {
-    authorType,
-    AuthorModel,
-} from '../../models';
+    authorType, AuthorModel,
+} from './Author';
 
 const author = {
     type: new GraphQLList(authorType),
@@ -28,4 +27,12 @@ const author = {
     }
 };
 
-export default author;
+const addAuthor = () => undefined;
+
+const editAuthor = () => undefined;
+
+export {
+    author as default,
+    addAuthor,
+    editAuthor,
+};

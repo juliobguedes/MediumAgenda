@@ -5,7 +5,7 @@ import {
 import {
     postType,
     PostModel,
-} from '../../models';
+} from './Post';
 
 const post = {
     type: new GraphQLList(postType),
@@ -23,4 +23,12 @@ const post = {
     }
 };
 
-export default post;
+const addPost = () => undefined;
+
+const editPost = () => undefined;
+
+export {
+    post as default,
+    addPost,
+    editPost,
+};

@@ -6,8 +6,8 @@ import {
     GraphQLList,
 } from 'graphql';
 import { Schema } from 'mongoose';
-import db from '../database/config';
-import movieType, { movieSchema, MovieModel } from './Movie';
+import db from '../../lib/config';
+import movieType, { movieSchema, MovieModel } from '../movie/Movie';
 
 const directorType = new GraphQLObjectType({
     name: 'Director',
@@ -35,6 +35,6 @@ const directorSchema = {
 const DirectorModel = db.model('director', new Schema(directorSchema));
 
 export {
-    directorType as default,
+    directorType,
     DirectorModel,
 };

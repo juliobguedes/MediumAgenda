@@ -3,9 +3,8 @@ import {
     GraphQLList,
 } from 'graphql';
 import {
-    DirectorModel,
-    directorType,
-} from '../../models';
+    DirectorModel, directorType,
+} from './Director';
 
 const director = {
     type: new GraphQLList(directorType),
@@ -18,4 +17,12 @@ const director = {
     }
 };
 
-export default director;
+const addDirector = () => undefined;
+
+const editDirector = () => undefined;
+
+export {
+    director as default,
+    addDirector,
+    editDirector,
+};

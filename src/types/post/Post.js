@@ -5,9 +5,9 @@ import {
     GraphQLString,
 } from 'graphql';
 import { Schema } from 'mongoose';
-import authorType, { authorSchema, AuthorModel } from './Author';
-import blogType, { blogSchema, BlogModel } from './Blog';
-import db from '../database/config';
+import authorType, { authorSchema, AuthorModel } from '../types/author/Author';
+import blogType, { blogSchema, BlogModel } from '../types/blog/Blog';
+import db from '../lib/config';
 
 const postType = new GraphQLObjectType({
     name: 'Post',
@@ -49,7 +49,7 @@ const postSchema = {
 const PostModel = db.model('Post', new Schema(postSchema));
 
 export {
-    postType as default,
+    postType,
     postSchema,
     PostModel,
 };

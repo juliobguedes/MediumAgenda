@@ -4,7 +4,7 @@ import {
     GraphQLID,
 } from 'graphql';
 import { Schema } from 'mongoose';
-import db from '../database/config';
+import db from '../../lib/config';
 
 const blogType = new GraphQLObjectType({
     name: 'Blog',
@@ -24,7 +24,7 @@ const blogSchema = {
 const BlogModel = db.model('Blog', new Schema(blogSchema));
 
 export {
-    blogType as default,
+    blogType,
     blogSchema,
     BlogModel,
 };

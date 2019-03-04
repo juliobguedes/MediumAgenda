@@ -3,10 +3,9 @@ import {
     GraphQLList,
     GraphQLString,
 } from 'graphql';
-
 import {
     blogType, BlogModel,
-} from '../../models';
+} from './Blog';
 
 const blog = {
     type: new GraphQLList(blogType),
@@ -28,4 +27,12 @@ const blog = {
     },
 };
 
-export default blog;
+const addBlog = () => undefined;
+
+const editBlog = () => undefined;
+
+export {
+    blog as default,
+    addBlog,
+    editBlog,
+};
