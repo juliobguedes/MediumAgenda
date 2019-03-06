@@ -14,10 +14,10 @@ const { ObjectId } = Types;
 
 const director = {
     type: new GraphQLList(directorType),
-    args: { id: { type: GraphQLInt }},
+    args: { id: { type: GraphQLID }},
     resolve: async (src, args) => {
         const directors = args.id ?
-            DirectorModel.findOne({ _id: new ObjectId(args.id) }) : DirectorModel.find();
+            [DirectorModel.findOne({ _id: new ObjectId(args.id) })] : DirectorModel.find();
         await directors;
         return directors;
     }
@@ -45,10 +45,10 @@ const editDirector = {
     async resolve(src, args) {
         const _id = new ObjectId(args.id);
         delete args.id;
-        const newdirector = await DirectorModel.findOneAndUpdate(
+        const updatedDirector = await DirectorModel.findOneAndUpdate(
             { _id }, { ...args }, { new: true },
         ).exec();
-        return newdirector;
+        return updatedDirector;
     }
 };
 

@@ -1,12 +1,12 @@
 import {
     GraphQLObjectType,
 } from 'graphql';
-import author, { addAuthor, editAuthor } from './author/authorQL';
-import blog, { addBlog, editBlog } from './blog/blogQL';
+import author, { addAuthor, editAuthor, deleteAuthor } from './author/authorQL';
+import blog, { addBlog, editBlog, deleteBlog } from './blog/blogQL';
 import director, { addDirector, editDirector, deleteDirector } from './director/directorQL';
-import movie, { addMovie, editMovie } from './movie/movieQL';
-import post, { addPost, editPost } from './post/postQL';
-import review, { addReview, editReview } from './review/reviewQL';
+import movie, { addMovie, editMovie, deleteMovie } from './movie/movieQL';
+import post, { addPost, editPost, deletePost } from './post/postQL';
+import review, { addReview, editReview, deleteReview } from './review/reviewQL';
 
 const queries = new GraphQLObjectType({
     name: 'Query',
@@ -25,22 +25,27 @@ const mutations = new GraphQLObjectType({
     fields: {
         // addAuthor,
         // editAuthor,
+        // deleteAuthor,
 
         // addBlog,
         // editBlog,
+        // deleteBlog,
 
         addDirector,
         editDirector,
         deleteDirector,
         
-        // addMovie,
-        // editMovie,
+        addMovie,
+        editMovie,
+        deleteMovie,
 
         // addPost,
         // editPost,
+        // deletePost,
 
         // addReview,
         // editReview,
+        // deleteReview,
     },
 });
 
