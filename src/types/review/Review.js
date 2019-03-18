@@ -44,7 +44,7 @@ const reviewSchema = {
     todayHighlight: Boolean,
 };
 
-const ReviewModel = db.model('Review', new Schema(reviewSchema));
+const ReviewModel = db.model('Review', new Schema(reviewSchema), 'Medium');
 
 export {
     reviewType,

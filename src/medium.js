@@ -5,7 +5,7 @@ import {
 import keys from './config';
 
 const {
-    MEDIUM_CID, MEDIUM_SKEY, REDIRECT_URL, JULIO_AUTH,
+    MEDIUM_CID, MEDIUM_SKEY, REDIRECT_URL, MEDIUM_IT,
 } = keys;
 
 const medium = new MediumClient({
@@ -20,7 +20,7 @@ const url = medium.getAuthorizationUrl('secretState', redirectURL, [
     Scope.PUBLISH_POST,
 ]);
 
-medium.exchangeAuthorizationCode(JULIO_AUTH, redirectURL, (err, token) => {
+medium.exchangeAuthorizationCode(MEDIUM_IT, redirectURL, (err, token) => {
     medium.getUser((err, user) => {
         medium.createPost({
             userId: user.id,

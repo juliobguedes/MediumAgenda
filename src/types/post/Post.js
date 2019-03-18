@@ -46,7 +46,7 @@ const postSchema = {
     postedIn: blogSchema,
 };
 
-const PostModel = db.model('Post', new Schema(postSchema));
+const PostModel = db.model('Post', new Schema(postSchema), 'Medium');
 
 export {
     postType,

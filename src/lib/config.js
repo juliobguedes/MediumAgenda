@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 import keys from '../config';
-const { MONGO_URL } = keys;
+const { MONGO_URL, LOCAL_MONGO_URL } = keys;
 
 const ERR = 1;
+const url = MONGO_URL || LOCAL_MONGO_URL;
 
-const db = mongoose.createConnection(MONGO_URL, { useNewUrlParser: true });
+const db = mongoose.createConnection(url, { useNewUrlParser: true });
 
 db.on('error', error => {
     console.error(error);

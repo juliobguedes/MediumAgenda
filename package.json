@@ -6,13 +6,13 @@
   "scripts": {
     "prestart": "secure-env .env -s damnDaniel",
     "start": "nodemon --exec babel-node index.js",
-    "lint": "yarn eslint .",
+    "lint": "yarn eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "medium",
     "reading",
-    "to-do"
+    "notes"
   ],
   "author": "julio.costa@ccc.ufcg.edu.br",
   "license": "MIT",

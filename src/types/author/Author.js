@@ -31,7 +31,7 @@ const authorSchema = {
     description: String,
 };
 
-const AuthorModel = db.model('Author', new Schema(authorSchema));
+const AuthorModel = db.model('Author', new Schema(authorSchema), 'Medium');
 
 export {
     authorType,

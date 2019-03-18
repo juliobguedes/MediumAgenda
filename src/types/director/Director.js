@@ -33,7 +33,7 @@ const directorSchema = {
     movies: [movieSchema],
 };
 
-const DirectorModel = db.model('director', new Schema(directorSchema));
+const DirectorModel = db.model('director', new Schema(directorSchema), 'Medium');
 
 export {
     directorType,
