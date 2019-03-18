@@ -7,8 +7,8 @@ import {
     GraphQLString,
 } from 'graphql';
 import { Schema } from 'mongoose';
-import postType, { PostModel, postSchema } from './Post';
-import db from '../database/config';
+import { postType, PostModel, postSchema } from '../post/Post';
+import db from '../../lib/config';
 
 const reviewType = new GraphQLObjectType({
     name: 'Review',
@@ -47,6 +47,7 @@ const reviewSchema = {
 const ReviewModel = db.model('Review', new Schema(reviewSchema));
 
 export {
-    reviewType as default,
+    reviewType,
     ReviewModel,
+    reviewSchema,
 };

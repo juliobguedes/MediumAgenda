@@ -5,7 +5,7 @@ import {
 import {
     reviewType,
     ReviewModel,
-} from '../../models';
+} from './Review';
 
 const review = {
     type: new GraphQLList(reviewType),
@@ -27,4 +27,12 @@ const review = {
     }
 };
 
-export default review;
+const addReview = { };
+
+const editReview = { };
+
+export {
+    review as default,
+    addReview,
+    editReview
+};

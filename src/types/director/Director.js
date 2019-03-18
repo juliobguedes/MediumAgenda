@@ -5,9 +5,11 @@ import {
     GraphQLString,
     GraphQLList,
 } from 'graphql';
-import { Schema } from 'mongoose';
-import db from '../database/config';
-import movieType, { movieSchema, MovieModel } from './Movie';
+import { Schema, Types } from 'mongoose';
+import db from '../../lib/config';
+import { movieType, movieSchema, MovieModel } from '../movie/Movie';
+
+const { ObjectId }  = Types;
 
 const directorType = new GraphQLObjectType({
     name: 'Director',
@@ -18,8 +20,7 @@ const directorType = new GraphQLObjectType({
         movies: {
             type: new GraphQLList(movieType),
             async resolve(src, _args) {
-                const dirMovies = MovieModel.find({ directorId: src.id });
-                await dirMovies;
+                const dirMovies = await MovieModel.find({ directorId: new ObjectId(src.id) });
                 return dirMovies;
             }
         }
@@ -35,6 +36,7 @@ const directorSchema = {
 const DirectorModel = db.model('director', new Schema(directorSchema));
 
 export {
-    directorType as default,
+    directorType,
     DirectorModel,
+    directorSchema,
 };

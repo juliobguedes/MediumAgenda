@@ -1,15 +1,14 @@
 import {
-    GraphQLList,
     GraphQLInt,
+    GraphQLList,
     GraphQLString,
 } from 'graphql';
 import {
-    authorType,
-    AuthorModel,
-} from '../../models';
+    blogType, BlogModel,
+} from './Blog';
 
-const author = {
-    type: new GraphQLList(authorType),
+const blog = {
+    type: new GraphQLList(blogType),
     args: {
         id: { type: GraphQLInt },
         name: { type: GraphQLString },
@@ -22,10 +21,18 @@ const author = {
         if (args.name) {
             qry.name = args.name;
         }
-        const authors = AuthorModel.find(qry);
-        await authors;
-        return authors;
-    }
+        const blogs = BlogModel.find(qry);
+        await blogs;
+        return blogs;
+    },
 };
 
-export default author;
+const addBlog = { };
+
+const editBlog = { };
+
+export {
+    blog as default,
+    addBlog,
+    editBlog,
+};

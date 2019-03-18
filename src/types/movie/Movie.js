@@ -5,7 +5,7 @@ import {
     GraphQLString
 } from 'graphql';
 import { Schema } from 'mongoose';
-import db from '../database/config';
+import db from '../../lib/config';
 
 const movieType = new GraphQLObjectType({
     name: 'Movie',
@@ -20,13 +20,13 @@ const movieType = new GraphQLObjectType({
 const movieSchema = {
     name: String,
     year: Number,
-    directorId: Number,
+    directorId: String,
 };
 
 const MovieModel = db.model('movie', new Schema(movieSchema));
 
 export {
-    movieType as default,
+    movieType,
     MovieModel,
     movieSchema
 };

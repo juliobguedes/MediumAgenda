@@ -4,7 +4,7 @@ import {
     GraphQLString,
 } from 'graphql';
 import { Schema } from 'mongoose';
-import db from '../database/config';
+import db from '../../lib/config';
 
 const MEDIUM_URL = 'https://www.medium.com/';
 
@@ -34,7 +34,7 @@ const authorSchema = {
 const AuthorModel = db.model('Author', new Schema(authorSchema));
 
 export {
-    authorType as default,
+    authorType,
     AuthorModel,
     authorSchema,
 };
