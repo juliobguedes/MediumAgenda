@@ -23,7 +23,7 @@ const movieSchema = {
     directorId: String,
 };
 
-const MovieModel = db.model('movie', new Schema(movieSchema), 'Medium');
+const MovieModel = db.model('movie', new Schema(movieSchema), 'Movie');
 
 export {
     movieType,

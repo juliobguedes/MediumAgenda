@@ -21,7 +21,7 @@ const blogSchema = {
     link: String,
 };
 
-const BlogModel = db.model('Blog', new Schema(blogSchema), 'Medium');
+const BlogModel = db.model('Blog', new Schema(blogSchema), 'Blog');
 
 export {
     blogType,

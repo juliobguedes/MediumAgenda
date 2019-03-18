@@ -30,7 +30,7 @@ const addDirector = {
         age: { type: GraphQLNonNull(GraphQLInt) },
     },
     async resolve(src, args) {
-        const newdirector = await DirectorModel.create({ ...args, movies: [] }); 
+        const newdirector = await DirectorModel.create({ ...args });
         return newdirector;
     }
 };

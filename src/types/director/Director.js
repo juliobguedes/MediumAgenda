@@ -7,7 +7,7 @@ import {
 } from 'graphql';
 import { Schema, Types } from 'mongoose';
 import db from '../../lib/config';
-import { movieType, movieSchema, MovieModel } from '../movie/Movie';
+import { movieType, MovieModel } from '../movie/Movie';
 
 const { ObjectId }  = Types;
 
@@ -30,10 +30,9 @@ const directorType = new GraphQLObjectType({
 const directorSchema = {
     name: String,
     age: Number,
-    movies: [movieSchema],
 };
 
-const DirectorModel = db.model('director', new Schema(directorSchema), 'Medium');
+const DirectorModel = db.model('director', new Schema(directorSchema), 'Director');
 
 export {
     directorType,

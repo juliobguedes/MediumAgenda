@@ -13,7 +13,12 @@ db.on('error', error => {
 });
 
 db.once('open', () => {
-    db.createCollection('Medium');
+    db.createCollection('Author');
+    db.createCollection('Blog');
+    db.createCollection('Director');
+    db.createCollection('Movie');
+    db.createCollection('Post');
+    db.createCollection('Review');
 });
 
 export default db;
