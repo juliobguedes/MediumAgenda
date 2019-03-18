@@ -6,6 +6,7 @@ import {
     queries, mutations,
 } from './src/types';
 const { PORT } = keys;
+import medium from './src/medium';
 
 const app = express();
 const schema = new GraphQLSchema({ query: queries, mutation: mutations });

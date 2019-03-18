@@ -20,7 +20,10 @@ const url = medium.getAuthorizationUrl('secretState', redirectURL, [
     Scope.PUBLISH_POST,
 ]);
 
+console.log(url);
+
 medium.exchangeAuthorizationCode(MEDIUM_IT, redirectURL, (err, token) => {
+    console.log(`User's token is ${token}`);
     medium.getUser((err, user) => {
         medium.createPost({
             userId: user.id,
